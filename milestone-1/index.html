@@ -4,7 +4,10 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" integrity="sha512-BnbUDfEUfV0Slx6TunuB042k9tuKe3xrD6q4mg5Ed72LTgzDIcLPxg6yI2gcMFRyomt+yJJxE+zJwNmxki6/RA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="css/style.css">
+
   <title>Vue Boolzapp</title>
 </head>
 <body>
@@ -15,7 +18,18 @@
 
       <!-- colonna di sinitsra con lista conatti -->
       <div class="left-column">
-        <div class="user-profile"></div>
+        <div class="user-profile">
+          <div class="profile">
+            <img src="img/avatar_io.jpg" alt="avatar user">
+            <h5>Nome Utente</h5>
+          </div>
+          <div class="icons-bar">
+            <i class="fas fa-circle-notch"></i>
+            <i class="fas fa-comment-alt"></i>
+            <i class="fas fa-ellipsis-v"></i>
+          </div>
+
+        </div>
         <div class="notifications"></div>
         <div class="search-bar"></div>
         <div class="contacts-list"></div>
@@ -23,7 +37,20 @@
 
       <!-- colonna di destra con la chat -->
       <div class="right-column">
-        <div class="chat-contact"></div>
+        <div class="chat-contact">
+          <div class="profile">
+            <img src="img/avatar_1.jpg" alt="">
+            <div>
+              <p>Michele</p>
+              <p class="access">Ultimo accesso oggi alle 10/01/2020 16:15:22</p>
+            </div>
+          </div>
+          <div class="icons-bar">
+            <i class="fas fa-search"></i>
+            <i class="fas fa-paperclip"></i>
+            <i class="fas fa-ellipsis-v"></i>
+          </div>
+        </div>
         <div class="chat-area"></div>
         <div class="chat-bar"></div>
       </div>
