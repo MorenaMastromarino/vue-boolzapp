@@ -3,3 +3,17 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.container {
+  height: 100vh;
+  width: 100%;
+  padding: 20px 0;
+  background: linear-gradient(#009688 130px, #DDDBD1 130px 50%, #D1DBDC); 
+}
+
+.wrapper{
+  height: 100%;
+  width: 80%;
+  margin: 0 auto;
+  background-color: cadetblue;  /*da togliere*/
+}
