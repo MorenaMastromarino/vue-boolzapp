@@ -5,7 +5,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" integrity="sha512-BnbUDfEUfV0Slx6TunuB042k9tuKe3xrD6q4mg5Ed72LTgzDIcLPxg6yI2gcMFRyomt+yJJxE+zJwNmxki6/RA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
   <link rel="stylesheet" href="css/style.css">
 
   <title>Vue Boolzapp</title>
@@ -48,6 +53,7 @@
           </div>
 
         </div>
+
         <!-- search-bar -->
         <div class="search-bar">
           <div class="search-icon">
@@ -59,6 +65,20 @@
 
         <!-- lista conversazioni -->
         <div class="contacts-list">
+
+          <div class="contact active">
+            <div class="contact-info">
+              <img src="img/avatar_1.jpg" alt="">
+              <div>
+                <p>Michele</p>
+                <p class="last-message">Tutto fatto! ...</p>
+              </div>
+            </div>
+            <div class="date">
+              <span>10/01/2020 16:15:22</span>
+            </div>
+          </div>
+
           <div class="contact">
             <div class="contact-info">
               <img src="img/avatar_1.jpg" alt="">
@@ -68,7 +88,7 @@
               </div>
             </div>
             <div class="date">
-              <p>10/01/2020 16:15:22</p>
+              <span>10/01/2020 16:15:22</span>
             </div>
           </div>
           
@@ -80,13 +100,13 @@
       <div class="right-column">
 
         <!-- contatto chat attiva -->
-        <div class="chat-contact">
+        <div class="active-chat-profile">
 
           <div class="profile">
             <img src="img/avatar_1.jpg" alt="">
             <div>
               <p>Michele</p>
-              <p class="access">Ultimo accesso oggi alle 10/01/2020 16:15:22</p>
+              <p class="last-access">Ultimo accesso oggi alle 10/01/2020 16:15:22</p>
             </div>
           </div>
 
@@ -99,10 +119,33 @@
         </div>
 
         <!-- area della chat attiva -->
-        <div class="chat-area"></div>
+        <div class="chat-area">
+
+          <div class="message sent">
+            <p>Hai portato a spasso il cane?</p>
+            <p class="date">10/01/2020 16:15:22</p>
+          </div>          
+
+          <div class="message sent">
+            <p>Ricordati di dargli da mangiare</p>
+            <p class="date">10/01/2020 16:15:22</p>
+          </div>    
+
+          <div class="message received">
+            <p>Tutto fatto!</p>
+            <p class="date">10/01/2020 16:15:22</p>
+          </div>          
+           
+        </div>
 
         <!-- barra inferiore della chat  -->
-        <div class="chat-bar"></div>
+        <div class="chat-bottom-bar">
+
+          <i class="far fa-smile"></i>
+          <input type="text" placeholder="Scrivi un messaggio">
+          <i class="fas fa-microphone"></i>
+
+        </div>
 
       </div>
       <!-- /colonna destra -->
