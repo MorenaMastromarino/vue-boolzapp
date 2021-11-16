@@ -40,6 +40,7 @@ body {
 .left-column {
   width: 35%; 
   border-right: 1px solid #D6D6D5;
+  background-color: #FAF9FA; 
 }
 
 /* user profile e chat-contact */
@@ -97,8 +98,7 @@ body {
   display: flex;
   align-items: center;
   height: 50px;
-  padding: 0 10px;
-  background-color: #FAF9FA; 
+  padding: 0 10px;  
 }
 
 .search-bar .search-icon {
@@ -107,7 +107,7 @@ body {
   padding: 0 25px;
   border: 1px solid #F4F5F6;
   border-right: none;
-  color: #B6B9BB;
+  color: #b4b4b4;
   background-color: white;
 }
 
@@ -116,6 +116,7 @@ body {
   height: 30px;
   border: 1px solid #F6F5F5;
   border-left: none;
+  border-radius: 0 5px 5px 0;
 }  
 
 .search-bar input::placeholder{
@@ -123,11 +124,40 @@ body {
 }
 
 
-
 /* lista conversazioni */
 .contacts-list {
   height: calc(100% - 200px);
-  background-color: crimson; /*da togliere*/
+  width: 98%;
+  border-right: 1px solid #E9EBEB;
+  background-color: white;  
+  overflow: auto;
+}
+
+.contact {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  border-bottom: 1px solid #E9EBEB;
+}
+
+.contact:last-child{
+  border-bottom: none;
+}
+
+.contact-info {
+  display: flex;  
+}
+
+.contact img {
+  width: 60px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.contact .last-message,
+.date p {
+  color: gray;
+  font-size: 14px;
 }
 
 /** right column **/
