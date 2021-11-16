@@ -67,7 +67,10 @@
         <div class="contacts-list">
 
           <div 
-            v-for="(contact, index) in contacts" class="contact">
+            v-for="(contact, index) in contacts" 
+            @click="showActiveChat(index)"
+            :class="{active: activeContact === index}"
+            class="contact">
             <div class="contact-info">
               <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name">
               <div>
@@ -91,9 +94,9 @@
         <div class="active-chat-profile">
 
           <div class="profile">
-            <img src="img/avatar_1.jpg" alt="">
+            <img :src="`img/avatar${contacts[activeContact].avatar}.jpg`" :alt="contacts[activeContact].name">
             <div>
-              <p>Michele</p>
+              <p>{{contacts[activeContact].name}}</p>
               <p class="last-access">Ultimo accesso oggi alle 10/01/2020 16:15:22</p>
             </div>
           </div>
@@ -109,20 +112,13 @@
         <!-- area della chat attiva -->
         <div class="chat-area">
 
-          <div class="message sent">
-            <p>Hai portato a spasso il cane?</p>
-            <p class="date">10/01/2020 16:15:22</p>
-          </div>          
-
-          <div class="message sent">
-            <p>Ricordati di dargli da mangiare</p>
-            <p class="date">10/01/2020 16:15:22</p>
-          </div>    
-
-          <div class="message received">
-            <p>Tutto fatto!</p>
-            <p class="date">10/01/2020 16:15:22</p>
-          </div>          
+          <div 
+            v-for="(message, index) in contacts[activeContact].messages"
+            class="message"
+            :class="message.status">
+            <p>{{message.message}}</p>
+            <p class="date">{{message.date}}</p>
+          </div>        
            
         </div>
 
