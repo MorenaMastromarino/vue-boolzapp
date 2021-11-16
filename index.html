@@ -17,7 +17,7 @@
 </head>
 <body>
   
-  <div class="container">
+  <div id="app" class="container">
 
     <div class="wrapper clearfix">
 
@@ -66,31 +66,19 @@
         <!-- lista conversazioni -->
         <div class="contacts-list">
 
-          <div class="contact active">
+          <div 
+            v-for="(contact, index) in contacts" class="contact">
             <div class="contact-info">
-              <img src="img/avatar_1.jpg" alt="">
+              <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name">
               <div>
-                <p>Michele</p>
+                <p>{{contact.name}}</p>
                 <p class="last-message">Tutto fatto! ...</p>
               </div>
             </div>
             <div class="date">
               <span>10/01/2020 16:15:22</span>
             </div>
-          </div>
-
-          <div class="contact">
-            <div class="contact-info">
-              <img src="img/avatar_1.jpg" alt="">
-              <div>
-                <p>Michele</p>
-                <p class="last-message">Tutto fatto! ...</p>
-              </div>
-            </div>
-            <div class="date">
-              <span>10/01/2020 16:15:22</span>
-            </div>
-          </div>
+          </div>        
           
         </div>
       </div>
