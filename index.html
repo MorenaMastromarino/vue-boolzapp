@@ -126,7 +126,12 @@
         <div class="chat-bottom-bar">
 
           <i class="far fa-smile"></i>
-          <input type="text" placeholder="Scrivi un messaggio">
+          <input 
+            v-model="newMessageText"
+            @keyup.enter="printNewMessage"
+            type="text" 
+            placeholder="Scrivi un messaggio"
+          >
           <i class="fas fa-microphone"></i>
 
         </div>

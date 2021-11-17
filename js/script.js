@@ -89,15 +89,31 @@ const app = new Vue({
     ],
 
     activeContact: 0,
+
+    newMessageText: '',
   },
 
   methods: {
     getLastMessage(index){
       let lastMessage = this.contacts[index].messages[this.contacts[index].messages.length - 1].message;
+
       if(lastMessage.length > 30){
         lastMessage = lastMessage.substr(0, 30);
       };
+
       return lastMessage + ' ...';
+    },
+
+    printNewMessage(){
+      const newMessage = {
+        date: '00:00:00',
+        message: this.newMessageText,
+        status: 'sent'
+      };
+
+      this.contacts[this.activeContact].messages.push(newMessage);
+
+      this.newMessageText = '';
     },
     
   },
