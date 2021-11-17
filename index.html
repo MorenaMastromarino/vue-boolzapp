@@ -68,14 +68,14 @@
 
           <div 
             v-for="(contact, index) in contacts" 
-            @click="showActiveChat(index)"
+            @click="activeContact = index"
             :class="{active: activeContact === index}"
             class="contact">
             <div class="contact-info">
               <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name">
               <div>
                 <p>{{contact.name}}</p>
-                <p class="last-message">Tutto fatto! ...</p>
+                <p class="last-message">{{getLastMessage(index)}}</p>
               </div>
             </div>
             <div class="date">

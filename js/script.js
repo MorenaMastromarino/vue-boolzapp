@@ -92,10 +92,14 @@ const app = new Vue({
   },
 
   methods: {
-
-    showActiveChat(index){
-      this.activeContact = index;
+    getLastMessage(index){
+      let lastMessage = this.contacts[index].messages[this.contacts[index].messages.length - 1].message;
+      if(lastMessage.length > 30){
+        lastMessage = lastMessage.substr(0, 30);
+      };
+      return lastMessage + ' ...';
     },
+    
   },
 
 });
