@@ -102,7 +102,7 @@ const app = new Vue({
       };
 
       return lastMessage + ' ...';
-    },
+    },  
 
     printNewMessage(){
       const newMessage = {
@@ -114,8 +114,22 @@ const app = new Vue({
       this.contacts[this.activeContact].messages.push(newMessage);
 
       this.newMessageText = '';
+
+      setTimeout(() => {
+        const responseMessage = {
+          date: '00:00:00',
+          message: 'ok',
+          status: 'received'
+        };
+  
+        this.contacts[this.activeContact].messages.push(responseMessage);
+        
+      }, 1000);
+
     },
+
     
+
   },
 
 });
