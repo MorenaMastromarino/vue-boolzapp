@@ -180,6 +180,11 @@ const app = new Vue({
       return lastMessage + ' ...';
     },  
 
+    // funzione per data ultimo messaggio
+    getLastDate(index){
+      return this.contacts[index].messages[this.contacts[index].messages.length - 1].date;
+    },
+
     // funzione che stampa nuovi messaggi scritti e invia risposta dopo 1 sec
     printNewMessage(){
       if(this.newMessageText.trim().length > 0){

@@ -87,7 +87,7 @@
             </div>
 
             <div class="date">
-              <span>10/01/2020 16:15:22</span>
+              <span>{{getLastDate(index)}}</span>
             </div>
 
           </div>        
@@ -107,7 +107,7 @@
             <img :src="`img/avatar${contacts[activeContact].avatar}.jpg`" :alt="contacts[activeContact].name">
             <div>
               <p>{{contacts[activeContact].name}}</p>
-              <p class="last-access">Ultimo accesso oggi alle 10/01/2020 16:15:22</p>
+              <p class="last-access">Ultimo accesso <span>{{getLastDate(activeContact)}}</span></p>
             </div>
           </div>
 
