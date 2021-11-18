@@ -180,7 +180,7 @@ const app = new Vue({
     printNewMessage(){
       if(this.newMessageText.trim().length > 0){
         const newMessage = {
-          date: '00:00:00',
+          date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
           message: this.newMessageText,
           status: 'sent'
         };
@@ -191,7 +191,7 @@ const app = new Vue({
   
         setTimeout(() => {
           const responseMessage = {
-            date: '00:00:00',
+            date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
             message: 'ok',
             status: 'received'
           };
@@ -209,3 +209,6 @@ const app = new Vue({
   },
 
 });
+
+dayjs.extend(window.dayjs_plugin_customParseFormat);
+console.log(dayjs().format('DD/MM/YYYY HH:mm:ss'));
