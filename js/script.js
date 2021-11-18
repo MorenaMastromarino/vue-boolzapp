@@ -165,7 +165,9 @@ const app = new Vue({
 
     newMessageText: '',
 
-    searchString: ''
+    searchString: '',
+
+    activeMenu: -1,
   },
 
   methods: {
@@ -222,7 +224,16 @@ const app = new Vue({
           contact.visible = true;
         }
       });
-    },   
+    },  
+    
+    // funzione comparsa dropdown menu
+    dropdownActive(index){
+      if(this.activeMenu !== index){
+        this.activeMenu = index;
+      }else{
+        this.activeMenu = -1;
+      };
+    },
   },
 
 });

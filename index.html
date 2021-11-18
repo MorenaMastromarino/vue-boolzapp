@@ -129,9 +129,14 @@
             <p>{{message.message}}</p>
             <p class="date">{{message.date}}</p>
 
-            <i class="fas fa-chevron-down"></i>
+            <i 
+              @click="dropdownActive(index)"
+              class="fas fa-chevron-down">
+            </i>
             
-            <div class="dropdown-menu">
+            <div
+             v-if="activeMenu === index"
+             class="dropdown-menu">
               <a href="#">Message info</a>
               <a href="#">Delete message</a>              
             </div>
