@@ -235,7 +235,7 @@ const app = new Vue({
     
     // funzione comparsa dropdown menu
     dropdownActive(index){
-      if(this.activeMenu !== index){
+      if(this.activeMenu === -1){
         this.activeMenu = index;
       }else{
         this.activeMenu = -1;

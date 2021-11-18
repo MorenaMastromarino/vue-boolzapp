@@ -138,7 +138,10 @@
              v-if="activeMenu === index"
              class="dropdown-menu">
               <a href="#">Message info</a>
-              <a href="#" @click="deleteMessage(index)">Delete message</a>              
+              <a href="#" 
+               @click="deleteMessage(index), dropdownActive(index)">
+                Delete message                
+              </a>              
             </div>
             
           </div>        
