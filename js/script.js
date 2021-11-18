@@ -164,9 +164,12 @@ const app = new Vue({
     activeContact: 0,
 
     newMessageText: '',
+
+    searchString: ''
   },
 
   methods: {
+    // funzione che prende inizio dell'ultimo messaggio e lo tronca se è troppo lungo
     getLastMessage(index){
       let lastMessage = this.contacts[index].messages[this.contacts[index].messages.length - 1].message;
 
@@ -177,6 +180,7 @@ const app = new Vue({
       return lastMessage + ' ...';
     },  
 
+    // funzione che stampa nuovi messaggi scritti e invia risposta dopo 1 sec
     printNewMessage(){
       if(this.newMessageText.trim().length > 0){
         const newMessage = {
@@ -204,11 +208,20 @@ const app = new Vue({
 
     },
 
-    
+    // funzione che gestisce visibilità lista contatti quando faccio ricerca
+    searchContact(){     
+      this.contacts.forEach((contact) => {
+        if(!contact.name.toLowerCase().includes(this.searchString.toLowerCase())){
+          contact.visible = false;
+        }else{
+          contact.visible = true;
+        }
+      });
+    },    
 
   },
 
 });
 
 dayjs.extend(window.dayjs_plugin_customParseFormat);
-console.log(dayjs().format('DD/MM/YYYY HH:mm:ss'));
+

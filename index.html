@@ -59,18 +59,25 @@
           <div class="search-icon">
             <i class="fas fa-search"></i>
           </div>
-          <input type="text" placeholder="Cerca o inizia una nuova chat">
+          <input 
+            @keyup="searchContact"
+            v-model="searchString"
+            type="text" 
+            placeholder="Cerca o inizia una nuova chat"
+          >
          
         </div>
 
         <!-- lista conversazioni -->
         <div class="contacts-list">
-
+          <!-- contatto -->
           <div 
             v-for="(contact, index) in contacts" 
+            v-if="contact.visible"
             @click="activeContact = index"
             :class="{active: activeContact === index}"
             class="contact">
+
             <div class="contact-info">
               <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name">
               <div>
@@ -78,12 +85,15 @@
                 <p class="last-message">{{getLastMessage(index)}}</p>
               </div>
             </div>
+
             <div class="date">
               <span>10/01/2020 16:15:22</span>
             </div>
+
           </div>        
-          
+          <!-- /contatto -->
         </div>
+
       </div>
       <!-- /colonna sinistra -->
 
