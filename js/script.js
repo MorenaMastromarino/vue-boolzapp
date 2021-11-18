@@ -222,8 +222,7 @@ const app = new Vue({
           contact.visible = true;
         }
       });
-    },    
-
+    },   
   },
 
 });

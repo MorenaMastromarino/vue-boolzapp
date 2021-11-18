@@ -121,15 +121,23 @@
 
         <!-- area della chat attiva -->
         <div class="chat-area">
-
+          <!-- messaggio -->
           <div 
             v-for="(message, index) in contacts[activeContact].messages"
             class="message"
             :class="message.status">
             <p>{{message.message}}</p>
             <p class="date">{{message.date}}</p>
+
+            <i class="fas fa-chevron-down"></i>
+            
+            <div class="dropdown-menu">
+              <a href="#">Message info</a>
+              <a href="#">Delete message</a>              
+            </div>
+            
           </div>        
-           
+           <!-- /messaggio -->
         </div>
 
         <!-- barra inferiore della chat  -->
