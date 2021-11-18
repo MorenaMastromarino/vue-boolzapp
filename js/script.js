@@ -2,6 +2,11 @@ const app = new Vue({
   el: '#app',
 
   data: {
+    user: {
+      name: 'Nome Utente',
+      avatar: '_io'
+    },
+
     contacts: [
       {
         name: 'Michele',
@@ -43,7 +48,7 @@ const app = new Vue({
           {
             date: '20/03/2020 16:35:00',
             message: 'Mi piacerebbe ma devo andare a fare la spesa.',
-            status: 'received'
+            status: 'sent'
           }
         ],
       },
@@ -86,6 +91,74 @@ const app = new Vue({
           }
         ],
       },
+      {
+        name: 'Marco',
+        avatar: '_5',
+        visible: true,
+        messages: [
+          {
+            date: '08/01/2020 11:30:22',
+            message: 'Come va? Stai meglio?',
+            status: 'sent'
+          },
+          {
+            date: '08/01/2020 11:50:00',
+            message: 'Si, mi sono ripreso!',
+            status: 'received'
+          }
+        ],
+      },
+      {
+        name: 'Martina',
+        avatar: '_6',
+        visible: true,
+        messages: [
+          {
+            date: '12/03/2020 18:15:10',
+            message: 'Domani sera ci sei per una pizza?',
+            status: 'received'
+          },
+          {
+            date: '12/03/2020 18:20:10',
+            message: 'No, non posso ma se ti va possiamo prenderci un caffè domani mattina',
+            status: 'sent'
+          }
+        ],
+      },
+      {
+        name: 'Giovanni',
+        avatar: '_7',
+        visible: true,
+        messages: [
+          {
+            date: '05/02/2020 09:30:55',
+            message: 'Tanti auguri!',
+            status: 'sent'
+          },
+          {
+            date: '05/02/2020 09:41:09',
+            message: 'Grazie!',
+            status: 'received'
+          }
+        ],
+      },
+      {
+        name: 'Pietro',
+        avatar: '_8',
+        visible: true,
+        messages: [
+          {
+            date: '05/02/2020 09:50:55',
+            message: 'Ricordati di fare gli auguri a Giovanni',
+            status: 'sent'
+          },
+          {
+            date: '05/02/2020 10:02:30',
+            message: 'Giusto! Stavo per dimenticarlo',
+            status: 'received'
+          }
+        ],
+      },
     ],
 
     activeContact: 0,
@@ -105,26 +178,29 @@ const app = new Vue({
     },  
 
     printNewMessage(){
-      const newMessage = {
-        date: '00:00:00',
-        message: this.newMessageText,
-        status: 'sent'
-      };
-
-      this.contacts[this.activeContact].messages.push(newMessage);
-
-      this.newMessageText = '';
-
-      setTimeout(() => {
-        const responseMessage = {
+      if(this.newMessageText.trim().length > 0){
+        const newMessage = {
           date: '00:00:00',
-          message: 'ok',
-          status: 'received'
+          message: this.newMessageText,
+          status: 'sent'
         };
   
-        this.contacts[this.activeContact].messages.push(responseMessage);
-        
-      }, 1000);
+        this.contacts[this.activeContact].messages.push(newMessage);
+  
+        this.newMessageText = '';
+  
+        setTimeout(() => {
+          const responseMessage = {
+            date: '00:00:00',
+            message: 'ok',
+            status: 'received'
+          };
+    
+          this.contacts[this.activeContact].messages.push(responseMessage);
+          
+        }, 1000);
+
+      };
 
     },
 

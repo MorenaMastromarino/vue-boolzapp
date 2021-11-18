@@ -28,8 +28,8 @@
         <div class="user-profile">
 
           <div class="profile">
-            <img src="img/avatar_io.jpg" alt="avatar user">
-            <h5>Nome Utente</h5>
+            <img :src="`img/avatar${user.avatar}.jpg`" alt="avatar user">
+            <h5>{{user.name}}</h5>
           </div>
 
           <div class="icons-bar">
