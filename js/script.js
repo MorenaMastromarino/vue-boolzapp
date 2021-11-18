@@ -173,10 +173,13 @@ const app = new Vue({
   methods: {
     // funzione che prende inizio dell'ultimo messaggio e lo tronca se è troppo lungo
     getLastMessage(index){
-      let lastMessage = this.contacts[index].messages[this.contacts[index].messages.length - 1].message;
-
-      if(lastMessage.length > 30){
-        lastMessage = lastMessage.substr(0, 30);
+      let lastMessage = '';
+      if(this.contacts[index].messages.length > 0){
+        lastMessage = this.contacts[index].messages[this.contacts[index].messages.length - 1].message;
+  
+        if(lastMessage.length > 30){
+          lastMessage = lastMessage.substr(0, 30);
+        };
       };
 
       return lastMessage + ' ...';
@@ -184,7 +187,11 @@ const app = new Vue({
 
     // funzione per data ultimo messaggio
     getLastDate(index){
-      return this.contacts[index].messages[this.contacts[index].messages.length - 1].date;
+      let date = '';
+      if(this.contacts[index].messages.length > 0){
+        date = this.contacts[index].messages[this.contacts[index].messages.length - 1].date;
+      };
+      return date;
     },
 
     // funzione che stampa nuovi messaggi scritti e invia risposta dopo 1 sec
@@ -233,6 +240,10 @@ const app = new Vue({
       }else{
         this.activeMenu = -1;
       };
+    },
+
+    deleteMessage(index){
+      this.contacts[this.activeContact].messages.splice(index, 1);
     },
   },
 
