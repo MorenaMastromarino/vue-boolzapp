@@ -197,13 +197,14 @@ const app = new Vue({
     // funzione che stampa nuovi messaggi scritti e invia risposta dopo 1 sec
     printNewMessage(){
       if(this.newMessageText.trim().length > 0){
+        const chatContact = this.activeContact;
         const newMessage = {
           date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
           message: this.newMessageText,
           status: 'sent'
         };
   
-        this.contacts[this.activeContact].messages.push(newMessage);
+        this.contacts[chatContact].messages.push(newMessage);
   
         this.newMessageText = '';
   
@@ -214,7 +215,7 @@ const app = new Vue({
             status: 'received'
           };
     
-          this.contacts[this.activeContact].messages.push(responseMessage);
+          this.contacts[chatContact].messages.push(responseMessage);
           
         }, 1000);
 
